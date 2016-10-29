@@ -43,7 +43,7 @@ public class WebViewController extends Activity {
         myWebView.getSettings().setJavaScriptEnabled(true);
 
         String imageUrl;
-        myWebView.loadUrl("http://http://emreweb.activebuilder.local/mxi/");
+        //myWebView.loadUrl("http://http://emreweb.activebuilder.local/mxi/");
     }
 
     @Override
