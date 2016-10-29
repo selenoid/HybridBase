@@ -1,9 +1,12 @@
 package test.activebuilder.com.hybridbase;
 
+import android.app.ActionBar;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebView;
 
@@ -30,8 +33,23 @@ public class MainActivity extends AppCompatActivity {
         myWebView.setWebViewClient(myWebViewClient);
         myWebView.getSettings().setJavaScriptEnabled(true);
 
+        View decorView = getWindow().getDecorView();
+// Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         String imageUrl;
         myWebView.loadUrl("http://maestropro.tacosoft.com.tr/login.aspx");
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     @Override
