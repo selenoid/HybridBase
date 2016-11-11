@@ -3,6 +3,7 @@ package test.activebuilder.com.hybridbase;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         myWebView.setWebViewClient(myWebViewClient);
         myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
         View decorView = getWindow().getDecorView();
 // Hide the status bar.
@@ -56,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
         String imageUrl;
        // myWebView.loadUrl("http://maestropro.tacosoft.com.tr/login.aspx");
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
     }
 
     private void loadJson() {

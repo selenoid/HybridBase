@@ -1,5 +1,5 @@
 {
 	configData:[
-		{name:"google", url:"http://maestropro.tacosoft.com.tr/login.aspx", id:"101"}
+		{name:"google", url:"http://maestropro.tacosoft.com.tr/", id:"101"}
 	]
 }

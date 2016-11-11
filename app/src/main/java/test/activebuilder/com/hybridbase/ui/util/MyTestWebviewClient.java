@@ -54,7 +54,9 @@ public class MyTestWebviewClient extends WebViewClient {
         Log.e("Error", "SSL Error code:" + error.toString());
 
         //super.onReceivedSslError(view, handler, error);
-        if (curURL.indexOf("https://msube.halkbank.com.tr") > -1) {
+        String errStr = error.getUrl();
+
+        if (errStr.indexOf("https://maestropro.tacosoft.com.tr") > -1) {
             handler.proceed();
         }
     }
@@ -112,8 +114,8 @@ public class MyTestWebviewClient extends WebViewClient {
             return true;
         } else {
             try {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.halkbank.com.tr/" + url));
-                activity.startActivity(browserIntent);
+                //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.halkbank.com.tr/" + url));
+                //activity.startActivity(browserIntent);
             } catch (Error error) {
                 Log.e("BrowserError", error.getMessage());
             }
