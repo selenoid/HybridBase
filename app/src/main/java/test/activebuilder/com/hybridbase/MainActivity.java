@@ -22,7 +22,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
+//Main Activity Starter
 import test.activebuilder.com.hybridbase.ui.util.MyTestWebviewClient;
 
 public class MainActivity extends AppCompatActivity {
